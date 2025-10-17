@@ -1,5 +1,4 @@
 // index.html에 data-sap-ui-onInit에 의해 호출
-// 이제 사용 안함!!!
 sap.ui.define([
 	"sap/ui/core/ComponentContainer"
 ], function (ComponentContainer) {
