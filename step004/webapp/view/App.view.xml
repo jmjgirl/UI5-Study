@@ -1,0 +1,6 @@
+ <!-- XML 태그는 컨트롤에 매핑되고 Attribute는 컨트롤의 Property에 매핑된다 -->
+<mvc:View
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc">
+   <Text text="Hello World with XMLView"/>
+</mvc:View>
