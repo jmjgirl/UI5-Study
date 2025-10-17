@@ -1,0 +1,16 @@
+ <!-- XML 태그는 컨트롤에 매핑되고 Attribute는 컨트롤의 Property에 매핑된다 -->
+ <!-- controllerName : 컨트롤러에 대한 참조 추가
+      Say Hello 버튼을 생성하고 버튼을 누르면 onShowHello 이벤트 핸들러 함수 호출 -->
+<!-- { }중괄호 안의 내용은 recipient 오브젝트의 name 속성값을 가리킴 = Data binding -->
+<mvc:View
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc"
+   controllerName="step007.controller.App">
+   <Button
+      text="Say Hello"
+      press=".onShowHello"/>
+   <Input
+      value="{/recipient/name}"
+      description="Hello{/recipient/name}"
+      width="60%"/>
+</mvc:View>
