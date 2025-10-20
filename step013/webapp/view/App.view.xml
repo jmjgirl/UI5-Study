@@ -1,0 +1,44 @@
+ <!-- XML 태그는 컨트롤에 매핑되고 Attribute는 컨트롤의 Property에 매핑된다 -->
+ <!-- controllerName : 컨트롤러에 대한 참조 추가
+      Say Hello 버튼을 생성하고 버튼을 누르면 onShowHello 이벤트 핸들러 함수 호출 -->
+<!-- { }중괄호 안의 내용은 recipient 오브젝트의 name 속성값을 가리킴 = Data binding -->
+<!-- <App> => <Pages> ... 태그들은 Object는 대문자이고 property는 소문자다 -->
+<mvc:View
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc"
+   controllerName="step013.controller.App"
+   displayBlock="true">
+   <!-- <Shell> 컨트롤은 App의 가장 바깥쪽 컨트롤이고 크기가 특정너비를 넘어가면
+        자동 여백이 생기게된다 -->
+   <Shell>
+     <App>
+        <pages>
+           <Page title="{i18n>homePageTitle}">
+              <content>
+                <!-- Margin은 반응형으로 화면크기에 맞게 자동 조정
+                     Margin에 의해서 Panel 너비가 100%를 초과하기 때문에 width값을
+                     auto로 지정-->
+                 <Panel
+                    headerText="{i18n>helloPanelTitle}"
+                    class="sapUiResponsiveMargin"
+                    width= "auto">
+                    <content>
+                       <Button
+                          text="{i18n>showHelloButtonText}"
+                          press=".onShowHello"
+                          class="sapUiSmallMarginEnd"/>
+                       <Input
+                          value="{/recipient/name}"
+                          description="Hello{/recipient/name}"
+                          width="60%"/>
+                       <Text
+                         text="Hello{/recipient/name}"
+                         clas="sapUiSmallMargin"/>
+                    </content>
+                 </Panel>
+              </content>
+           </Page>
+        </pages>
+     </App>
+   </Shell>
+</mvc:View>
