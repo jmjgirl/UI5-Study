@@ -1,0 +1,15 @@
+<!-- 일반 View와 비슷하지만 controller가 없음 -->
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core" >
+
+   <Dialog
+      id="helloDialog"
+      title="Hello{/recipient/name}">
+      <beginButton>
+         <Button
+            text="{i18n>dialogCloseButtonText}"
+            press=".onCloseDialog"/>
+      </beginButton>
+   </Dialog>
+</core:FragmentDefinition>

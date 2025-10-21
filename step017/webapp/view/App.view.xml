@@ -1,0 +1,26 @@
+ <!-- XML 태그는 컨트롤에 매핑되고 Attribute는 컨트롤의 Property에 매핑된다 -->
+ <!-- controllerName : 컨트롤러에 대한 참조 추가
+      Say Hello 버튼을 생성하고 버튼을 누르면 onShowHello 이벤트 핸들러 함수 호출 -->
+<!-- { }중괄호 안의 내용은 recipient 오브젝트의 name 속성값을 가리킴 = Data binding -->
+<!-- <App> => <Pages> ... 태그들은 Object는 대문자이고 property는 소문자다 -->
+<mvc:View
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc"
+   controllerName="step017.controller.App"
+   displayBlock="true">
+   <!-- <Shell> 컨트롤은 App의 가장 바깥쪽 컨트롤이고 크기가 특정너비를 넘어가면
+        자동 여백이 생기게된다 -->
+   <Shell>
+     <!-- App 컨트롤에 Custom Class를 지정하여 해당 컨트롤에만 Custom CSS가 유효-->
+     <App class="myAppDemoWT">
+        <pages>
+           <Page title="{i18n>homePageTitle}">
+             <content>
+               <!-- Panel과 content를 새로운 View에 넣어 표 => View 재사용 가능 -->
+               <mvc:XMLView viewName="step017.view.HelloPanel"/>
+            </content>
+           </Page>
+        </pages>
+     </App>
+   </Shell>
+</mvc:View>
