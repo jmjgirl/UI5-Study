@@ -1,0 +1,16 @@
+<mvc:View
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc">
+   <!-- items="{invoice>/Invoices}"를 통해 item aggregation을 invoice에 바인딩했기 때문에
+        json 데이터를 받아올 수 있다. -->
+   <List
+      headerText="{i18n>invoiceListTitle}"
+      class="sapUiResponsiveMargin"
+      width="auto"
+      items="{invoice>/Invoices}" >
+      <items>
+         <ObjectListItem
+            title="{invoice>Quantity} x {invoice>ProductName}"/>
+      </items>
+   </List>
+</mvc:View>
