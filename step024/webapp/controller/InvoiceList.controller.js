@@ -1,0 +1,35 @@
+sap.ui.define([
+	"sap/ui/core/mvc/Controller",
+	"sap/ui/model/json/JSONModel",
+	"../model/formatter",
+	// Filter 객체는 필터 동작에 대한 구성 / FilterOperator는 필터를 지정하는데 필요
+	"sap/ui/model/Filter",
+	"sap/ui/model/FilterOperator"
+], function (Controller, JSONModel, formatter, Filter, FilterOperator) {
+	"use strict";
+
+	return Controller.extend("step024.controller.InvoiceList", {
+		formatter: formatter,
+		onInit : function () {
+			var oViewModel = new JSONModel({
+				currency: "EUR"
+			});
+			this.getView().setModel(oViewModel, "view");
+		},
+		onFilterInvoices : function (oEvent){
+
+			// build filter array
+			var aFilter = [];
+			var sQuery = oEvent.getParameter("query");
+			if (sQuery) {
+				aFilter.push(new Filter("ProductName", FilterOperator.Contains, sQuery));
+			}
+
+			// filter binding
+			var oList = this.byId("invoiceList");
+			var oBinding = oList.getBinding("items");
+			oBinding.filter(aFilter);
+		}
+
+	});
+});

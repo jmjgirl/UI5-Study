@@ -1,0 +1,44 @@
+<mvc:View
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc"
+   controllerName="step024.controller.InvoiceList">
+   <!-- items="{invoice>/Invoices}"를 통해 item aggregation을 invoice에 바인딩했기 때문에
+        json 데이터를 받아올 수 있다. -->
+   <List
+      id="invoiceList"
+      class="sapUiResponsiveMargin"
+      width="auto"
+      items="{invoice>/Invoices}" >
+      <headerToolbar>
+         <Toolbar>
+            <Title text="{i18n>invoiceListTitle}"/>
+            <ToolbarSpacer/>
+            <SearchField width="50%" search=".onFilterInvoices"/>
+         </Toolbar>
+      </headerToolbar>
+      <items>
+        <!-- 서로 다른 Model에서 바인딩된 속성 = parts
+              numberUnit으로 통화키를 표현하기 때문에 showMeasure를 false로 설정 -->
+        <ObjectListItem
+           title="{invoice>Quantity} x {invoice>ProductName}"
+           number="{
+             parts: [{path: 'invoice>ExtendedPrice'}, {path: 'view>/currency'}],
+             type: 'sap.ui.model.type.Currency',
+             formatOptions: {
+               showMeasure: false
+             }
+           }"
+           numberUnit="{view>/currency}"
+           numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }">
+           <!-- Binding 내부의 Model Binding은 앞에 $을 붙여준다 -->
+           <firstStatus>
+   					<ObjectStatus
+              text="{
+   						path: 'invoice>Status',
+   						formatter: '.formatter.statusText'
+   					}"/>
+   				</firstStatus>
+   			</ObjectListItem>
+      </items>
+   </List>
+</mvc:View>
