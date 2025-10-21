@@ -1,0 +1,17 @@
+<mvc:View
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  controllerName="zstep099.controller.App"
+  displayBlock="true">
+  <Input
+    id="inp01"
+    value="{jsonModel>/product/0/productid}"
+    enabled="{stateModel>/enabled}">
+  </Input>
+
+  <Button
+    id="btn01"
+    text="click here"
+    press=".changeState">
+  </Button>
+</mvc:View>

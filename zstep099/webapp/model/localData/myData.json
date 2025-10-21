@@ -1,0 +1,20 @@
+{
+   "product":[
+      {
+         "productid": "TV-0001",
+          "name": "Gaming TV"
+      },
+      {
+          "productid": "17PC",
+          "name": "17 CPU Computer"
+      },
+      {
+          "productid": "TAB11",
+          "name": "11\" tablet"
+      },
+      {
+          "productid": "SM-01",
+          "name": "Smartphone"
+      }
+   ]
+}
