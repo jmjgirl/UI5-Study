@@ -1,0 +1,14 @@
+/* 좀 더 세분화된 layout을 정의할 필요가 있을때 Custom Style 추가 */
+/* ltr, rtl은 스마트기기에서 화면 반전시 여백 재설치 */
+html[dir="ltr"] .myAppDemoWT .myCustomButton.sapMBtn{
+   margin-right: 0.625rem
+}
+
+html[dir="rtl"] .myAppDemoWT .myCustomButton.sapMBtn{
+   margin-right: 0.625rem
+}
+
+.myAppDemoWT .myCustomText {
+   display: inline-block;
+   font-weight: bold;
+}
