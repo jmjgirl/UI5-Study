@@ -3,15 +3,26 @@
   xmlns:mvc="sap.ui.core.mvc"
   controllerName="zstep099.controller.App"
   displayBlock="true">
-  <Input
-    id="inp01"
-    value="{jsonModel>/product/0/productid}"
-    enabled="{stateModel>/enabled}">
-  </Input>
 
-  <Button
-    id="btn01"
-    text="click here"
-    press=".changeState">
-  </Button>
+  <App class="myAppDemoWT">
+    <pages>
+      <Page
+        id="myPage"
+        title="{i18n>homePageTitle}">
+        <content>
+          <Input
+            id="inp01"
+            value="{jsonModel>/product/0/productid}"
+            enabled="{stateModel>/enabled}">
+          </Input>
+
+          <Button
+            id="btn01"
+            text="click here"
+            press=".changeState">
+          </Button>
+        </content>
+      </Page>
+    </pages>
+  </App>
 </mvc:View>
